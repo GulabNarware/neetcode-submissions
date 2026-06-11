@@ -1,12 +1,10 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        
-        indx={}
-
+        dic={}
         for i in range(len(nums)):
-            a=target-nums[i]
-            if target-a not in indx:
-                indx[a]=i
+            diff=target-nums[i]
+            if diff in dic:
+                return [dic[diff],i]
 
-            else:
-                return [indx[nums[i]],i]
+    
+            dic[nums[i]]=i
